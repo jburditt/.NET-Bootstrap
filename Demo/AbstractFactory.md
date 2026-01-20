@@ -1,7 +1,8 @@
+# Abstract Factory
+
+The Abstract Factory design pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+
 ```mermaid
----
-title: Abstract Factory
----
 classDiagram
     StorageService <|-- AzureStorageService
     StorageServiceFactory <|-- AzureStorageServiceFactory
@@ -13,9 +14,9 @@ classDiagram
         +Delete()
     }
     class StorageServiceFactory{
-        +CreateStorage()
+        +CreateStorageService()
     }
     class AzureStorageServiceFactory{
-        +CreateStorage()
+        +CreateStorageService()
     }
 ```

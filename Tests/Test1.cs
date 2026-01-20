@@ -1,4 +1,6 @@
-﻿namespace Tests;
+﻿using Demo.Prototype;
+
+namespace Tests;
 
 [TestClass]
 public sealed class Test1
@@ -16,5 +18,11 @@ public sealed class Test1
         //Assert.IsTrue(dict.Get("animal").Contains("lion"));
         //Assert.IsTrue(dict.Flatten().Any(kv => kv.Key == "animal" && kv.Value == "tiger"));
         //Assert.IsTrue(dict.Flatten().Any(kv => kv.Key == "animal" && kv.Value == "lion"));
+    }
+
+    [TestMethod]
+    public void Test_Prototype()
+    {
+        Demo.Prototype.Program.Main(Array.Empty<string>());
     }
 }

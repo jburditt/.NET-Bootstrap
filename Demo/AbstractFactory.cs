@@ -1,24 +1,24 @@
-﻿namespace Demo;
-
-public interface StorageService
+﻿public abstract class StorageService
 {
-    void Upload(string file);
-    bool Delete(string file);
+    public abstract void Upload(string file);
+    public abstract bool Delete(string file);
 }
 
-public interface StorageServiceFactory
+// abstract factory
+public abstract class StorageServiceFactory
 {
-    StorageService CreateStorage();
+    public abstract StorageService CreateStorageService();
 }
 
+// concrete class
 public class AzureStorageService : StorageService
 {
-    public void Upload(string file)
+    public override void Upload(string file)
     {
         // upload to Azure Blob Storage
     }
 
-    public bool Delete(string file)
+    public override bool Delete(string file)
     {
         // delete file on Azure Blob Storage
         return true;
@@ -27,7 +27,7 @@ public class AzureStorageService : StorageService
 
 public class AzureStorageServiceFactory : StorageServiceFactory
 {
-    public StorageService CreateStorage()
+    public override StorageService CreateStorageService()
     {
         return new AzureStorageService();
     }
@@ -38,7 +38,7 @@ public class Program
     public static void Main(String[] args)
     {
         var factory = new AzureStorageServiceFactory();
-        var storage = factory.CreateStorage();
+        var storage = factory.CreateStorageService();
         storage.Upload("test.md");
         storage.Delete("test.md");
     }

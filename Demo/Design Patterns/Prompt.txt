@@ -1,0 +1,1 @@
+describe the X design pattern and provide the output in markdown format, include examples of use cases, a code snippet in C#, a mermaid diagram in markdown format, and a summary of key points.
