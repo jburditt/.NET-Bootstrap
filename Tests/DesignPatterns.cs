@@ -1,9 +1,7 @@
-﻿using Demo.Prototype;
-
-namespace Tests;
+﻿namespace Tests;
 
 [TestClass]
-public sealed class Test1
+public sealed class DesignPatterns
 {
     [TestMethod]
     public void Test_Add_Multiple_Values()
