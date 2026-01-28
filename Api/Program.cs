@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OData.Edm;
 using Microsoft.OData.Edm.Vocabularies;
 using Microsoft.OData.ModelBuilder;
+using Microsoft.Extensions.Logging.AzureAppServices;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
@@ -31,6 +32,7 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.DocumentFilter<ODataDocumentFilter>();
 });
+builder.Logging.AddAzureWebAppDiagnostics();
 
 var app = builder.Build();
 
