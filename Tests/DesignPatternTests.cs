@@ -1,7 +1,7 @@
 ﻿namespace Tests;
 
 [TestClass]
-public sealed class DesignPatterns
+public sealed class DesignPatternTests
 {
     [TestMethod]
     public void Test_Add_Multiple_Values()
